@@ -1,12 +1,11 @@
 const express = require('express');
+const fs = require('fs');
 
 const server = express();
 
 server.use('/test', async function(req, res) {
-    res.send(`<html>
-    <head></head>
-    <body><h1>test</h1></body>
-    </html>`).end();
+    const content = fs.readFileSync('html/test.html', {encoding: 'utf-8'});
+    res.send(content).end();
 });
 
 server.listen(3000, '0.0.0.0');
