@@ -23,6 +23,7 @@
   },
   "homepage": "https://github.com/Zanto501/SmashHelper#readme",
   "dependencies": {
+    "body-parser": "^1.18.2",
     "express": "^4.16.2"
   }
 }
