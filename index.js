@@ -2,6 +2,13 @@ const express = require('express');
 const fs = require('fs');
 const {render} = require('./render');
 const server = express();
+const parser = require('body-parser');
+
+server.use(parser.json());
+server.use(parser.urlencoded({
+    extended: true
+}));
+
 
 server.get('/login', async function(req, res) {
     res.send(render("login.html")).end();
